@@ -1,0 +1,44 @@
+﻿<html>
+  <head>
+    <!-- Ladda in ett fint typsnitt från google fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    <!-- Ladda in jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Ladda in våra css styles från en separat fil -->
+    <link href="styles.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="resultBoard">
+      <h1> Results </h1> 
+      <div class="score"></div>
+      <table class="resultList"></table>
+    </div>
+    <div class="card-and-buttons">
+      <!-- Här är några divvar för att vända på kortet. Kopierat från http://davidwalsh.name/css-flip -->
+      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front card">
+            <!-- Här kommer framsidans innehåll att vara -->
+          </div>
+          <div class="back card">
+            <!-- Här kommer baksidans innehåll att vara -->
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="next"> Next
+        </button>
+        <button class="test"> Start test </button>
+        <input class="answer">
+        </input>
+        <button class="testAgain"> Start test again </button>
+      </div>
+    </div>
+    <!--
+      Efter all HTML, ladda in javascriptet. Vi laddar scriptet sist eftersom
+      vi vill att all HTML ska var inläst i webläsaren innan vi börjar köra
+      någon javascript kod.
+    -->
+    <script src="flashcardr.js"></script>
+  </body>
+</html>

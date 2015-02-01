@@ -1,0 +1,92 @@
+body {
+  font-family: verdana;
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.resultBoard {
+
+  background-image: url('reviewBackground.jpg');
+  background-size: cover;
+  margin: auto;
+  width: 300px;
+  padding:50px;
+}
+.resultList {
+  margin-top: 20px; 
+}
+.card {
+  margin:100px auto 0px auto;
+  box-shadow: 1px 9px 18px rgba(0,0,0,0.5);
+  text-align: center;
+  padding-top: 50px;
+  background-size:contain;
+  background-repeat: no-repeat;
+  font-family: 'Indie Flower', cursive;
+  -webkit-user-select: none;
+  font-size: 34pt;
+  color: rgba(39, 39, 39, 0.7);
+}
+.buttons {
+  margin-top: 30px; 
+  float: right;
+}
+.card-and-buttons {
+  width: 400px;
+  margin: auto;
+}
+.front {
+  background-image: url('frontcard.jpg');
+}
+.back {
+  background-image: url('backcard.jpg');
+}
+
+/*
+ * Här nedan är css styles som hör till card-flipper-koden som togs från
+ * http://davidwalsh.name/css-flip.
+ */
+
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000;
+  margin-bottom: 150px;
+}
+  /* flip the pane when hovered */
+  .flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+  }
+
+.flip-container, .front, .back {
+  width: 400px;
+  height: 185px;
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+}
