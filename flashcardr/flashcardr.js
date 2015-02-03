@@ -204,17 +204,27 @@ $(".resultBoard").hide();
 var count = prompt("How many cards?");
 
 // Om count är mindre än 3 eller om det inte är en bokstav.
-if (count < 3 || !isNumber(count)) {
-  alert("Input must be a number greater than 3");
+if (count < 3 || !isNumber(count) || count > 51) {
+  alert("Input must be a number greater than 3, and lower then 51");
   window.location.reload();
 }
 
 // Slumpa ut count antal kort
+var used = [];
 for (var i = 0; i < count; i++) {
   // Slumpmässigt index från 0 till så många länder vi har
   var idx = Math.floor(Math.random() * countries.length);
+  
+  // Om vi har redan användt det här indexet
+  while (used.indexOf(idx) != -1) {
+    // då slumpar vi fram ett nytt tal.
+    idx = Math.floor(Math.random() * countries.length);
+  }
   fronts.push(countries[idx]);
   backs.push(capitals[idx]);
+
+  // Kom ihåg att vi använt det här indexet
+  used.push(idx);
 }
 
 // Visar första kortet. Let the games begin!
